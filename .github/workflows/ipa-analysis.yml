@@ -1,0 +1,181 @@
+name: IPA Static Analysis Reports
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/ipa-analysis.yml"
+      - "*.ipa"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ipa-static-analysis
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: macos-14
+    timeout-minutes: 20
+    steps:
+      - name: Check out analysis repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Verify inputs and extract IPAs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work reports
+          for ipa in lara_v0.2.ipa DSGames_2.5.ipa; do
+            if [[ ! -s "$ipa" ]]; then
+              echo "::error::Missing or empty input: $ipa"
+              exit 1
+            fi
+            name="${ipa%.ipa}"
+            mkdir -p "work/$name"
+            ditto -x -k "$ipa" "work/$name"
+          done
+
+      - name: Generate targeted reports
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, plistlib, re, subprocess, hashlib
+          from pathlib import Path
+
+          ROOT = Path("work")
+          OUT = Path("reports")
+          OUT.mkdir(exist_ok=True)
+
+          def run(args, timeout=90):
+              try:
+                  p = subprocess.run(args, text=True, stdout=subprocess.PIPE,
+                                     stderr=subprocess.STDOUT, timeout=timeout)
+                  return p.stdout
+              except Exception as e:
+                  return f"[command failed: {e}]\\n"
+
+          def write(name, sections):
+              (OUT / name).write_text("\\n".join(sections), encoding="utf-8")
+
+          for appdir in sorted(ROOT.iterdir()):
+              if not appdir.is_dir():
+                  continue
+              ipa_name = appdir.name
+              apps = list((appdir / "Payload").glob("*.app"))
+              if not apps:
+                  write(f"{ipa_name}-manifest.txt", [f"INPUT: {ipa_name}.ipa", "ERROR: No Payload/*.app found"])
+                  continue
+              app = apps[0]
+              plist_path = app / "Info.plist"
+              try:
+                  info = plistlib.loads(plist_path.read_bytes())
+              except Exception as e:
+                  info = {}
+                  plist_error = str(e)
+              else:
+                  plist_error = ""
+              executable_name = info.get("CFBundleExecutable", "")
+              executable = app / executable_name if executable_name else None
+
+              manifest = [
+                  f"INPUT: {ipa_name}.ipa",
+                  f"APP: {app.name}",
+                  f"Bundle ID: {info.get('CFBundleIdentifier', 'unknown')}",
+                  f"Executable: {executable_name or 'unknown'}",
+                  f"Version: {info.get('CFBundleShortVersionString', 'unknown')}",
+                  f"Build: {info.get('CFBundleVersion', 'unknown')}",
+                  f"Minimum OS: {info.get('MinimumOSVersion', 'unknown')}",
+                  f"SDK: {info.get('DTSDKName', 'unknown')}",
+                  f"Supported platforms: {info.get('CFBundleSupportedPlatforms', [])}",
+                  f"Device family: {info.get('UIDeviceFamily', [])}",
+                  f"Info.plist parse error: {plist_error or 'none'}",
+              ]
+              for rel in ["embedded.mobileprovision", "_CodeSignature/CodeResources"]:
+                  p = app / rel
+                  manifest.append(f"{rel}: {'present' if p.exists() else 'absent'}")
+              write(f"{ipa_name}-manifest.txt", manifest)
+
+              binaries = []
+              for p in app.rglob("*"):
+                  if not p.is_file():
+                      continue
+                  desc = run(["file", "-b", str(p)], timeout=10).strip()
+                  if "Mach-O" in desc:
+                      binaries.append((p, desc))
+
+              dep_sections, load_sections, sym_sections, objc_sections, hash_sections = [], [], [], [], []
+              for p, desc in binaries:
+                  rel = str(p.relative_to(app))
+                  dep_sections += [f"===== {rel} =====", desc, run(["xcrun", "otool", "-L", str(p)])]
+                  load_sections += [f"===== {rel} =====", run(["xcrun", "otool", "-l", str(p)])]
+                  sym_sections += [f"===== {rel} : defined global symbols =====",
+                                   run(["xcrun", "nm", "-gU", str(p)], timeout=120),
+                                   f"===== {rel} : undefined symbols =====",
+                                   run(["xcrun", "nm", "-u", str(p)], timeout=120)]
+                  hash_sections.append(f"{hashlib.sha256(p.read_bytes()).hexdigest()}  {rel}  ({p.stat().st_size} bytes)")
+                  strings = run(["xcrun", "strings", "-a", str(p)], timeout=120)
+                  hits = []
+                  for line in strings.splitlines():
+                      if (re.search(r"OBJC_(CLASS|METACLASS|PROTOCOL)_\$_|^[-+]\[[^]]+\]|^_?\$s", line)
+                          or re.search(r"(^|[ ])(mach_vm_|task_for_pid|proc_listpids|sysctl|vm_read|vm_map)", line)):
+                          hits.append(line)
+                  if hits:
+                      objc_sections += [f"===== {rel} =====", *sorted(set(hits))[:5000]]
+
+              write(f"{ipa_name}-dependencies.txt", dep_sections or ["No Mach-O binaries detected"])
+              write(f"{ipa_name}-load-commands.txt", load_sections or ["No Mach-O binaries detected"])
+              write(f"{ipa_name}-symbols.txt", sym_sections or ["No Mach-O binaries detected"])
+              write(f"{ipa_name}-objc-and-process-api-strings.txt", objc_sections or ["No matching strings detected"])
+              write(f"{ipa_name}-binary-hashes.txt", hash_sections or ["No Mach-O binaries detected"])
+
+              signing = [f"APP: {app.name}",
+                         "===== codesign details =====",
+                         run(["codesign", "-dv", "--verbose=4", str(app)]),
+                         "===== entitlements =====",
+                         run(["codesign", "-d", "--entitlements", ":-", str(app)])]
+              profile = app / "embedded.mobileprovision"
+              if profile.exists():
+                  signing += ["===== decoded provisioning profile =====",
+                              run(["security", "cms", "-D", "-i", str(profile)])]
+              else:
+                  signing += ["No embedded.mobileprovision present"]
+              write(f"{ipa_name}-signing-entitlements.txt", signing)
+
+          index = [
+              "# IPA static-analysis reports",
+              "",
+              "Generated from the checked-in IPA files by GitHub Actions on a macOS runner.",
+              "These are static inspection outputs; they do not prove runtime permissions or successful cross-process access.",
+              "",
+              "For each app, reports include:",
+              "- manifest and platform metadata",
+              "- linked dylib dependencies",
+              "- Mach-O load commands and rpaths",
+              "- defined and undefined global symbols",
+              "- Objective-C / process-API related strings",
+              "- binary SHA-256 hashes",
+              "- code-signing and entitlement inspection",
+              "",
+              "Review the reports as evidence, not as proof of runtime behavior."
+          ]
+          (OUT / "README.md").write_text("\\n".join(index) + "\\n", encoding="utf-8")
+          PY
+
+      - name: Commit reports to repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "Add targeted IPA static analysis reports"
+            git push
+          fi
