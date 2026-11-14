@@ -18,13 +18,18 @@ concurrency:
 
 jobs:
   symbols:
-    runs-on: macos-15
+    runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+
+      - name: Install LLVM Mach-O inspection tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y llvm
 
       - name: Verify and extract IPA inputs
         shell: bash
@@ -81,17 +86,17 @@ jobs:
                       f"SHA-256: {hashlib.sha256(data).hexdigest()}",
                       "",
                   ]
-                  rc, archs = run(["xcrun", "lipo", "-archs", str(binary)])
+                  rc, archs = run(["llvm-lipo", "-archs", str(binary)])
                   report += ["## Architectures", f"Exit code: {rc}", archs.rstrip(), ""]
                   architectures = archs.strip().split() if rc == 0 else []
                   for arch in architectures:
                       report += [f"## {arch}: defined global external symbols",
-                                 f"Command: xcrun nm -arch {arch} -gU <binary>"]
-                      rc, output = run(["xcrun", "nm", "-arch", arch, "-gU", str(binary)])
+                                 f"Command: llvm-nm --arch={arch} --extern-only --defined-only <binary>"]
+                      rc, output = run(["llvm-nm", f"--arch={arch}", "--extern-only", "--defined-only", str(binary)])
                       report += [f"Exit code: {rc}", output.rstrip() or "(no output)", "",
                                  f"## {arch}: undefined symbols",
-                                 f"Command: xcrun nm -arch {arch} -u <binary>"]
-                      rc, output = run(["xcrun", "nm", "-arch", arch, "-u", str(binary)])
+                                 f"Command: llvm-nm --arch={arch} --undefined-only <binary>"]
+                      rc, output = run(["llvm-nm", f"--arch={arch}", "--undefined-only", str(binary)])
                       report += [f"Exit code: {rc}", output.rstrip() or "(no output)", ""]
               filename = f"{app_name}-{dylib_name.replace('.', '-')}-symbols.txt"
               (out / filename).write_text("\n".join(report) + "\n", encoding="utf-8")
