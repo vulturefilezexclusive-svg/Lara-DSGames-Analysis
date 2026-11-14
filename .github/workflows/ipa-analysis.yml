@@ -161,6 +161,17 @@ jobs:
             echo "No report changes to commit."
           else
             git commit -m "Add static Mach-O dependency and metadata reports"
+
+            # The branch may have advanced since checkout (for example, from
+            # a concurrent documentation/report update). Rebase this report
+            # commit onto the current main before pushing; never force-push.
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "::error::Could not rebase generated reports onto the latest main. Resolve the report-file conflict and rerun."
+              exit 1
+            fi
+
             git push
           fi
 
