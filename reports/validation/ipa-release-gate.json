@@ -1,0 +1,120 @@
+[
+  {
+    "app": "Lara-v0.2",
+    "ipa": "lara_v0.2.ipa",
+    "checks": [
+      {
+        "name": "ZIP CRC integrity",
+        "pass": true,
+        "detail": "All entries pass CRC"
+      },
+      {
+        "name": "Archive paths are confined",
+        "pass": true,
+        "detail": "0 unsafe path(s)"
+      },
+      {
+        "name": "Exactly one app Info.plist",
+        "pass": true,
+        "detail": "Found 1"
+      },
+      {
+        "name": "CFBundleExecutable exists in app bundle",
+        "pass": true,
+        "detail": "Payload/lara.app/lara"
+      },
+      {
+        "name": "Bundle identifier present",
+        "pass": true,
+        "detail": "com.roooot.lara"
+      },
+      {
+        "name": "Version/build metadata present",
+        "pass": true,
+        "detail": "0.2 / Release"
+      },
+      {
+        "name": "CodeResources manifest present",
+        "pass": false,
+        "detail": "No CodeResources manifest"
+      },
+      {
+        "name": "Provisioning profile status recorded",
+        "pass": true,
+        "detail": "Absent; may be expected for unsigned/ad-hoc input"
+      },
+      {
+        "name": "Device ARM64 architecture present",
+        "pass": true,
+        "detail": "arm64e"
+      }
+    ],
+    "status": "FAIL",
+    "ipa_bytes": 5474210,
+    "ipa_sha256": "c8ba0fec11137d36732108afa8cb3da1947779745bc368ba7e78f1af993298a2",
+    "bundle_id": "com.roooot.lara",
+    "version": "0.2",
+    "build": "Release",
+    "minimum_os": "16.0",
+    "architectures": "arm64e"
+  },
+  {
+    "app": "DSGames-2.5",
+    "ipa": "DSGames_2.5.ipa",
+    "checks": [
+      {
+        "name": "ZIP CRC integrity",
+        "pass": true,
+        "detail": "All entries pass CRC"
+      },
+      {
+        "name": "Archive paths are confined",
+        "pass": true,
+        "detail": "0 unsafe path(s)"
+      },
+      {
+        "name": "Exactly one app Info.plist",
+        "pass": true,
+        "detail": "Found 1"
+      },
+      {
+        "name": "CFBundleExecutable exists in app bundle",
+        "pass": true,
+        "detail": "Payload/DSGames.app/DSGames"
+      },
+      {
+        "name": "Bundle identifier present",
+        "pass": true,
+        "detail": "com.dsgames.app"
+      },
+      {
+        "name": "Version/build metadata present",
+        "pass": true,
+        "detail": "2.5 / 2026110402"
+      },
+      {
+        "name": "CodeResources manifest present",
+        "pass": true,
+        "detail": "Manifest found"
+      },
+      {
+        "name": "Provisioning profile status recorded",
+        "pass": true,
+        "detail": "Present (contents not decoded)"
+      },
+      {
+        "name": "Device ARM64 architecture present",
+        "pass": true,
+        "detail": "arm64e"
+      }
+    ],
+    "status": "PASS",
+    "ipa_bytes": 19684890,
+    "ipa_sha256": "84472e8069a14daaa4670590de10e0013a1dd0ee0fc7f9b772c70f2cd120f9f1",
+    "bundle_id": "com.dsgames.app",
+    "version": "2.5",
+    "build": "2026110402",
+    "minimum_os": "16.1",
+    "architectures": "arm64e"
+  }
+]
