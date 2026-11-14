@@ -30,6 +30,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y llvm
+          for tool_dir in /usr/lib/llvm-*/bin; do
+            if [ -d "$tool_dir" ]; then echo "$tool_dir" >> "$GITHUB_PATH"; fi
+          done
 
       - name: Verify and extract IPA inputs
         shell: bash
@@ -40,8 +43,13 @@ jobs:
           done
           rm -rf work
           mkdir -p work
-          ditto -x -k lara_v0.2.ipa work/lara
-          ditto -x -k DSGames_2.5.ipa work/dsgames
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          for archive, destination in (("lara_v0.2.ipa", "work/lara"), ("DSGames_2.5.ipa", "work/dsgames")):
+              with zipfile.ZipFile(archive) as zf:
+                  zf.extractall(destination)
+          PY
 
       - name: Generate four targeted symbol reports
         shell: bash
