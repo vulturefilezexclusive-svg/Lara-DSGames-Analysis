@@ -19,7 +19,7 @@
 | Main-executable process APIs | DSGames and Lara evidence differs in recorded imports/strings | More explicit process/VM API references were previously observed | Evidence asymmetry | Do not infer capability from strings/imports; validate only in an owned test target |
 | Entitlement/profile metadata | Lara had no embedded profile in supplied IPA | DSGames profile had additional declared entitlements; grant/runtime availability unverified | Authorization context differs | No entitlement-based compatibility assumption |
 | Minimum iOS metadata | Lara 16.0 | DSGames 16.1 | Platform baseline mismatch | Lara's deployment target must be tested on each supported OS; do not assume target parity |
-| Objective-C selectors/class metadata | Dedicated inventory not yet executed | Dedicated inventory not yet executed | Unknown | Await metadata workflow output |
+| Objective-C metadata | Class/category/selector-reference sections present in libgrabkernel2; Partial class symbol exported | Same section families present; no exported class symbol detected | Metadata presence matches; selector/method compatibility unknown | Extract actual selector strings, method implementations, and class-layout evidence before reuse |
 | Function prototypes/struct layouts | Not established from export names alone | Not established from export names alone | Unknown | Requires reliable headers, debug info, or unambiguous call-site evidence |
 
 ## Important interpretation
@@ -35,6 +35,6 @@ A symbol absent from the global export list may still exist as a local/hidden im
 - **Not exported:** symbol is not in the target build's global export list. Do not bind to it dynamically.
 - **Unknown:** insufficient evidence for a compatibility decision.
 
-## Current disposition
+## Dependency metadata update\n\nThe completed inventory reports matching install names and listed system dependencies for the two paired dylibs. Both libgrabkernel2 builds declare iOS 14.0 and both libxpf builds declare iOS 15.0 at the dylib load-command level. No LC_RPATH was found in these dylibs; host-executable run-path entries have not yet been inventoried. These findings are summarized in [dependency-and-metadata-findings.md](dependency-and-metadata-findings.md).\n\n## Current disposition
 
 No binary transplant or direct function-call integration is approved by this matrix. Preserve Lara's current implementation as the baseline and use the metadata inventory plus controlled tests on an owned app/test harness to close the remaining unknowns.
