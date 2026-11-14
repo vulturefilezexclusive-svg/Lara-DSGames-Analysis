@@ -1,0 +1,351 @@
+[
+  {
+    "app": "Lara-v0.2",
+    "file": "libgrabkernel2.dylib",
+    "path": "work/lara/Payload/lara.app/Frameworks/libgrabkernel2.dylib",
+    "bytes": 210112,
+    "sha256": "fb27032f7a9401b52ba94821de301aa2a57e3f61fc67bf464db3ce4075b52a4e",
+    "slices": [
+      {
+        "slice": "arm64",
+        "header_arch": "arm64",
+        "install_name": "@rpath/libgrabkernel2.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Security.framework/Security"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libz.1.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/UIKit.framework/UIKit"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libobjc.A.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "14.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      },
+      {
+        "slice": "arm64e",
+        "header_arch": "arm64e",
+        "install_name": "@rpath/libgrabkernel2.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Security.framework/Security"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libz.1.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/UIKit.framework/UIKit"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libobjc.A.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "14.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      }
+    ],
+    "objc_metadata": {
+      "section_command_exit": 0,
+      "metadata_sections_found": [
+        "__objc_catlist",
+        "__objc_classlist",
+        "__objc_classrefs",
+        "__objc_const",
+        "__objc_selrefs",
+        "__objc_superrefs"
+      ],
+      "symbol_command_exit": 0,
+      "exported_objc_class_symbols": [
+        "_OBJC_CLASS_$_Partial",
+        "_OBJC_METACLASS_$_Partial"
+      ]
+    }
+  },
+  {
+    "app": "Lara-v0.2",
+    "file": "libxpf.dylib",
+    "path": "work/lara/Payload/lara.app/Frameworks/libxpf.dylib",
+    "bytes": 472112,
+    "sha256": "e87d0469bc542e1403531cf7d4f027335d514882c78b5a80cb750c5e6f310a30",
+    "slices": [
+      {
+        "slice": "arm64",
+        "header_arch": "arm64",
+        "install_name": "@executable_path/Frameworks/libxpf.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libcompression.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "15.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      },
+      {
+        "slice": "arm64e",
+        "header_arch": "arm64e",
+        "install_name": "@executable_path/Frameworks/libxpf.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libcompression.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "15.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      }
+    ],
+    "objc_metadata": {
+      "section_command_exit": 0,
+      "metadata_sections_found": [],
+      "symbol_command_exit": 0,
+      "exported_objc_class_symbols": []
+    }
+  },
+  {
+    "app": "DSGames-2.5",
+    "file": "libgrabkernel2.dylib",
+    "path": "work/dsgames/Payload/DSGames.app/Frameworks/libgrabkernel2.dylib",
+    "bytes": 278528,
+    "sha256": "a272e919c9ff3ae909aca7d10f83afbf74ff34a44663520d21bd27558b5c91de",
+    "slices": [
+      {
+        "slice": "arm64",
+        "header_arch": "arm64",
+        "install_name": "@rpath/libgrabkernel2.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Security.framework/Security"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libz.1.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/UIKit.framework/UIKit"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libobjc.A.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "14.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      },
+      {
+        "slice": "arm64e",
+        "header_arch": "arm64e",
+        "install_name": "@rpath/libgrabkernel2.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Security.framework/Security"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libz.1.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/UIKit.framework/UIKit"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libobjc.A.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "14.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      }
+    ],
+    "objc_metadata": {
+      "section_command_exit": 0,
+      "metadata_sections_found": [
+        "__objc_catlist",
+        "__objc_classlist",
+        "__objc_classrefs",
+        "__objc_const",
+        "__objc_selrefs",
+        "__objc_superrefs"
+      ],
+      "symbol_command_exit": 0,
+      "exported_objc_class_symbols": []
+    }
+  },
+  {
+    "app": "DSGames-2.5",
+    "file": "libxpf.dylib",
+    "path": "work/dsgames/Payload/DSGames.app/Frameworks/libxpf.dylib",
+    "bytes": 507904,
+    "sha256": "f2dc42d209e2b52bc837469ce34c637076a23ae4f2823057c78e58e91025db78",
+    "slices": [
+      {
+        "slice": "arm64",
+        "header_arch": "arm64",
+        "install_name": "@executable_path/Frameworks/libxpf.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libcompression.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "15.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      },
+      {
+        "slice": "arm64e",
+        "header_arch": "arm64e",
+        "install_name": "@executable_path/Frameworks/libxpf.dylib",
+        "dependencies": [
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/Foundation.framework/Foundation"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libcompression.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/usr/lib/libSystem.B.dylib"
+          },
+          {
+            "kind": "load",
+            "name": "/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation"
+          }
+        ],
+        "rpaths": [],
+        "minimum_os": "15.0.0",
+        "sdk": "26.0.0",
+        "dyld_info_command": false,
+        "has_export_trie_command_or_range": true
+      }
+    ],
+    "objc_metadata": {
+      "section_command_exit": 0,
+      "metadata_sections_found": [],
+      "symbol_command_exit": 0,
+      "exported_objc_class_symbols": []
+    }
+  }
+]
