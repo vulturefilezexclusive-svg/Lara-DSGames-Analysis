@@ -137,12 +137,18 @@ jobs:
           PY
 
       - name: Generate dependency and Objective-C metadata inventory
+        id: static_reports
         shell: bash
         run: |
           set -euo pipefail
           python3 scripts/macho_metadata_inventory.py
           python3 scripts/host_executable_selector_inventory.py
-          python3 scripts/ipa_release_gate.py
+          if python3 scripts/ipa_release_gate.py; then
+            echo "gate_failed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "gate_failed=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::IPA release gate reported failed checks; reports will be committed for diagnosis."
+          fi
 
       - name: Commit symbol and metadata reports
         shell: bash
@@ -157,3 +163,9 @@ jobs:
             git commit -m "Add static Mach-O dependency and metadata reports"
             git push
           fi
+
+      - name: Enforce IPA release gate after publishing reports
+        if: steps.static_reports.outputs.gate_failed == 'true'
+        run: |
+          echo "::error::IPA release gate failed. See reports/validation/ipa-release-gate.md for exact failed checks."
+          exit 1
