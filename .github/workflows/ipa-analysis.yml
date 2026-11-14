@@ -10,7 +10,7 @@ on:
       - "DSGames_2.5.ipa"
       - "scripts/macho_metadata_inventory.py"
       - "scripts/host_executable_selector_inventory.py"
-      - "scripts/ipa_release_gate.py"\n      - "scripts/ipa_release_gate.py"
+      - "scripts/ipa_release_gate.py"
 
 permissions:
   contents: write
