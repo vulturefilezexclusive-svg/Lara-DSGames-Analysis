@@ -1,0 +1,190 @@
+# Symbol report: Lara-v0.2 / libgrabkernel2.dylib
+
+Static Mach-O symbol inspection only; this does not establish runtime behavior.
+
+Path in extracted IPA: work/lara/Payload/lara.app/Frameworks/libgrabkernel2.dylib
+File size: 210112 bytes
+SHA-256: fb27032f7a9401b52ba94821de301aa2a57e3f61fc67bf464db3ce4075b52a4e
+
+## Architectures
+Exit code: 0
+arm64 arm64e
+
+## arm64: defined global external symbols
+Command: llvm-nm --arch=arm64 --extern-only --defined-only <binary>
+Exit code: 0
+0000000000010538 S _OBJC_CLASS_$_Partial
+0000000000010524 S _OBJC_IVAR_$_Partial._centralDirectory
+0000000000010528 S _OBJC_IVAR_$_Partial._centralDirectoryCount
+000000000001051c S _OBJC_IVAR_$_Partial._endOfCentralDirectory
+0000000000010520 S _OBJC_IVAR_$_Partial._endOfCentralDirectory64
+000000000001052c S _OBJC_IVAR_$_Partial._fileHeaders
+0000000000010518 S _OBJC_IVAR_$_Partial._isZip64
+0000000000010514 S _OBJC_IVAR_$_Partial._session
+0000000000010510 S _OBJC_IVAR_$_Partial._url
+0000000000010560 S _OBJC_METACLASS_$_Partial
+0000000000007200 T _download_kernelcache
+0000000000006b18 T _download_kernelcache_for
+0000000000007570 T _fetchSysctlString
+0000000000007850 T _getBoardconfig
+0000000000007700 T _getBuild
+0000000000006310 T _getFirmwareURL
+0000000000005d78 T _getFirmwareURLFor
+00000000000077a8 T _getModelIdentifier
+0000000000007600 T _getOsStr
+0000000000007360 T _grab_kernelcache
+0000000000007298 T _grab_kernelcache_for
+00000000000073e8 T _grab_kernelcache_for_build_number
+00000000000074d0 T _grabkernel
+0000000000010588 D _hostsNeedingAuth
+
+## arm64: undefined symbols
+Command: llvm-nm --arch=arm64 --undefined-only <binary>
+Exit code: 0
+_NSLocalizedDescriptionKey
+_NSUnderlyingErrorKey
+_OBJC_CLASS_$_NSConstantArray
+_OBJC_CLASS_$_NSData
+_OBJC_CLASS_$_NSDictionary
+_OBJC_CLASS_$_NSError
+_OBJC_CLASS_$_NSFileManager
+_OBJC_CLASS_$_NSHTTPURLResponse
+_OBJC_CLASS_$_NSJSONSerialization
+_OBJC_CLASS_$_NSMutableData
+_OBJC_CLASS_$_NSMutableDictionary
+_OBJC_CLASS_$_NSMutableURLRequest
+_OBJC_CLASS_$_NSObject
+_OBJC_CLASS_$_NSProcessInfo
+_OBJC_CLASS_$_NSPropertyListSerialization
+_OBJC_CLASS_$_NSString
+_OBJC_CLASS_$_NSURL
+_OBJC_CLASS_$_NSURLSession
+_OBJC_CLASS_$_NSURLSessionConfiguration
+_OBJC_CLASS_$_NSValue
+_OBJC_CLASS_$_UIDevice
+_OBJC_METACLASS_$_NSObject
+__Block_object_assign
+__Block_object_dispose
+__NSConcreteStackBlock
+__Unwind_Resume
+___CFConstantStringClassReference
+___assert_rtn
+___objc_personality_v0
+___stack_chk_fail
+___stack_chk_guard
+__objc_empty_cache
+_dispatch_semaphore_create
+_dispatch_semaphore_signal
+_dispatch_semaphore_wait
+_free
+_inflate
+_inflateEnd
+_inflateInit2_
+_malloc
+_objc_alloc
+_objc_autorelease
+_objc_autoreleaseReturnValue
+_objc_enumerationMutation
+_objc_msgSend
+_objc_msgSendSuper2
+_objc_opt_class
+_objc_opt_isKindOfClass
+_objc_release
+_objc_retain
+_objc_retainAutorelease
+_objc_retainAutoreleasedReturnValue
+_objc_storeStrong
+_objc_unsafeClaimAutoreleasedReturnValue
+_printf
+_puts
+_sysctlbyname
+
+## arm64e: defined global external symbols
+Command: llvm-nm --arch=arm64e --extern-only --defined-only <binary>
+Exit code: 0
+0000000000010538 S _OBJC_CLASS_$_Partial
+0000000000010524 S _OBJC_IVAR_$_Partial._centralDirectory
+0000000000010528 S _OBJC_IVAR_$_Partial._centralDirectoryCount
+000000000001051c S _OBJC_IVAR_$_Partial._endOfCentralDirectory
+0000000000010520 S _OBJC_IVAR_$_Partial._endOfCentralDirectory64
+000000000001052c S _OBJC_IVAR_$_Partial._fileHeaders
+0000000000010518 S _OBJC_IVAR_$_Partial._isZip64
+0000000000010514 S _OBJC_IVAR_$_Partial._session
+0000000000010510 S _OBJC_IVAR_$_Partial._url
+0000000000010560 S _OBJC_METACLASS_$_Partial
+0000000000007468 T _download_kernelcache
+0000000000006d7c T _download_kernelcache_for
+00000000000077ec T _fetchSysctlString
+0000000000007b0c T _getBoardconfig
+0000000000007994 T _getBuild
+00000000000064b4 T _getFirmwareURL
+0000000000005f08 T _getFirmwareURLFor
+0000000000007a50 T _getModelIdentifier
+0000000000007890 T _getOsStr
+00000000000075d0 T _grab_kernelcache
+0000000000007504 T _grab_kernelcache_for
+000000000000765c T _grab_kernelcache_for_build_number
+0000000000007748 T _grabkernel
+0000000000010588 D _hostsNeedingAuth
+
+## arm64e: undefined symbols
+Command: llvm-nm --arch=arm64e --undefined-only <binary>
+Exit code: 0
+_NSLocalizedDescriptionKey
+_NSUnderlyingErrorKey
+_OBJC_CLASS_$_NSConstantArray
+_OBJC_CLASS_$_NSData
+_OBJC_CLASS_$_NSDictionary
+_OBJC_CLASS_$_NSError
+_OBJC_CLASS_$_NSFileManager
+_OBJC_CLASS_$_NSHTTPURLResponse
+_OBJC_CLASS_$_NSJSONSerialization
+_OBJC_CLASS_$_NSMutableData
+_OBJC_CLASS_$_NSMutableDictionary
+_OBJC_CLASS_$_NSMutableURLRequest
+_OBJC_CLASS_$_NSObject
+_OBJC_CLASS_$_NSProcessInfo
+_OBJC_CLASS_$_NSPropertyListSerialization
+_OBJC_CLASS_$_NSString
+_OBJC_CLASS_$_NSURL
+_OBJC_CLASS_$_NSURLSession
+_OBJC_CLASS_$_NSURLSessionConfiguration
+_OBJC_CLASS_$_NSValue
+_OBJC_CLASS_$_UIDevice
+_OBJC_METACLASS_$_NSObject
+__Block_object_assign
+__Block_object_dispose
+__NSConcreteStackBlock
+__Unwind_Resume
+___CFConstantStringClassReference
+___assert_rtn
+___objc_personality_v0
+___stack_chk_fail
+___stack_chk_guard
+__objc_empty_cache
+_dispatch_semaphore_create
+_dispatch_semaphore_signal
+_dispatch_semaphore_wait
+_free
+_inflate
+_inflateEnd
+_inflateInit2_
+_malloc
+_objc_alloc
+_objc_autorelease
+_objc_autoreleaseReturnValue
+_objc_enumerationMutation
+_objc_msgSend
+_objc_msgSendSuper2
+_objc_opt_class
+_objc_opt_isKindOfClass
+_objc_release
+_objc_retain
+_objc_retainAutorelease
+_objc_retainAutoreleasedReturnValue
+_objc_storeStrong
+_objc_unsafeClaimAutoreleasedReturnValue
+_printf
+_puts
+_sysctlbyname
+

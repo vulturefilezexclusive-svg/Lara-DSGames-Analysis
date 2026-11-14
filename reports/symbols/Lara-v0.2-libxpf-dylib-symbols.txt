@@ -1,0 +1,818 @@
+# Symbol report: Lara-v0.2 / libxpf.dylib
+
+Static Mach-O symbol inspection only; this does not establish runtime behavior.
+
+Path in extracted IPA: work/lara/Payload/lara.app/Frameworks/libxpf.dylib
+File size: 472112 bytes
+SHA-256: e87d0469bc542e1403531cf7d4f027335d514882c78b5a80cb750c5e6f310a30
+
+## Architectures
+Exit code: 0
+arm64 arm64e
+
+## arm64: defined global external symbols
+Command: llvm-nm --arch=arm64 --extern-only --defined-only <binary>
+Exit code: 0
+000000000001293c T __dsc_load_file
+00000000000135e0 T __dsc_load_symbols
+0000000000018928 T __macho_parse
+0000000000019b4c T __memory_stream_clone
+000000000001b12c T __pfsec_run_arm64_xref_metric
+000000000001af0c T __pfsec_run_pattern_metric
+000000000001b028 T __pfsec_run_string_metric
+000000000001b220 T __pfsec_run_xref_metric
+000000000001c2e8 T _align_to_size
+000000000001cd98 T _arm64_dec_add_imm
+000000000001c918 T _arm64_dec_adr_p
+000000000001c7a8 T _arm64_dec_b_c_cond
+000000000001c690 T _arm64_dec_b_l
+000000000001d814 T _arm64_dec_cb_n_z
+000000000001d268 T _arm64_dec_ldr_imm
+000000000001d5a0 T _arm64_dec_ldr_lit
+000000000001d484 T _arm64_dec_ldrs_imm
+000000000001caf0 T _arm64_dec_mov_imm
+000000000001cc30 T _arm64_dec_mov_reg
+000000000001d4fc T _arm64_dec_str_imm
+000000000001cf2c T _arm64_dec_sub_imm
+000000000001d948 T _arm64_dec_tb_n_z
+000000000001cca0 T _arm64_gen_add_imm
+000000000001c850 T _arm64_gen_adr_p
+000000000001c714 T _arm64_gen_b_c_cond
+000000000001c630 T _arm64_gen_b_l
+000000000001d780 T _arm64_gen_cb_n_z
+000000000001d628 T _arm64_gen_ldp
+000000000001d000 T _arm64_gen_ldr_imm
+000000000001d51c T _arm64_gen_ldr_lit
+000000000001d42c T _arm64_gen_ldrs_imm
+000000000001ca04 T _arm64_gen_mov_imm
+000000000001cb80 T _arm64_gen_mov_reg
+000000000001d4a4 T _arm64_gen_str_imm
+000000000001ce20 T _arm64_gen_sub_imm
+000000000001d8a4 T _arm64_gen_tb_n_z
+000000000001c600 T _arm64_reg_get_type_string
+000000000001c5dc T _arm64_reg_type_get_string
+000000000001c5b0 T _arm64_reg_type_get_width
+000000000001cfbc T _arm64_str_ldr_type_width
+000000000000ea60 T _base64_encode
+000000000000ecd0 T _buffered_stream_init_from_buffer
+000000000000ebc0 T _buffered_stream_init_from_buffer_nocopy
+0000000000010634 T _code_directory_calculate_page_hash
+0000000000015934 T _create_der_entitlements_blob
+0000000000014adc T _create_property_list_from_file
+0000000000014ca0 T _create_xml_entitlements_blob
+000000000000f170 T _cs_blob_magic_to_string
+0000000000010a4c T _cs_code_directory_get_size
+0000000000010a28 T _cs_hash_type_to_length
+0000000000010a00 T _cs_hash_type_to_string
+0000000000010a78 T _cs_slot_to_string
+000000000000f2c4 T _cs_slot_type_to_string
+000000000000f91c T _csd_blob_delete
+000000000000f9fc T _csd_blob_free
+000000000000f9e4 T _csd_blob_get_size
+000000000000f9ec T _csd_blob_get_type
+000000000000f7fc T _csd_blob_init
+000000000000f8bc T _csd_blob_insert
+000000000000f854 T _csd_blob_read
+000000000000f97c T _csd_blob_read_string
+000000000000f9f4 T _csd_blob_set_type
+000000000000f85c T _csd_blob_write
+000000000000f984 T _csd_blob_write_string
+00000000000110f0 T _csd_code_directory_calculate_hash
+000000000001109c T _csd_code_directory_calculate_rank
+0000000000010aa0 T _csd_code_directory_copy_identifier
+0000000000010b40 T _csd_code_directory_copy_team_id
+0000000000010fdc T _csd_code_directory_get_flags
+0000000000011040 T _csd_code_directory_get_hash_type
+0000000000011afc T _csd_code_directory_init
+00000000000111fc T _csd_code_directory_print_content
+00000000000105a4 T _csd_code_directory_read_slot_hash
+0000000000011010 T _csd_code_directory_set_flags
+0000000000011070 T _csd_code_directory_set_hash_type
+0000000000010ddc T _csd_code_directory_set_identifier
+0000000000010be4 T _csd_code_directory_set_team_id
+00000000000119cc T _csd_code_directory_update_code_slots
+000000000001172c T _csd_code_directory_update_special_slots
+00000000000107c8 T _csd_code_directory_verify_code_slot
+0000000000010954 T _csd_code_directory_verify_code_slots
+000000000000fd30 T _csd_superblob_append_blob
+000000000000ff98 T _csd_superblob_calculate_best_cdhash
+000000000000fa38 T _csd_superblob_decode
+000000000000fb24 T _csd_superblob_encode
+000000000000ff28 T _csd_superblob_find_best_code_directory
+000000000000fc28 T _csd_superblob_find_blob
+000000000000fc5c T _csd_superblob_find_blob_by_magic
+00000000000103e4 T _csd_superblob_free
+000000000000fa2c T _csd_superblob_init
+000000000000fcdc T _csd_superblob_insert_blob_after_blob
+000000000000fcf0 T _csd_superblob_insert_blob_at_index
+0000000000010038 T _csd_superblob_print_content
+000000000000fef0 T _csd_superblob_remove_blob
+000000000000fe5c T _csd_superblob_remove_blob_at_index
+000000000000fd54 T _csd_superblob_replace_blob
+000000000000ae34 T _decompress_lzss
+000000000000ac48 T _der_decode
+000000000000accc T _der_decode_seq
+000000000000ad64 T _der_decode_uint64
+0000000000014f48 T _der_encode_array
+0000000000011f40 T _der_encode_boolean
+0000000000015034 T _der_encode_entitlement
+00000000000151cc T _der_encode_entitlements
+0000000000011f8c T _der_encode_integer
+0000000000011e64 T _der_encode_item
+0000000000011c44 T _der_encode_length
+0000000000012014 T _der_encode_sequence
+0000000000012198 T _der_encode_set
+0000000000011fe0 T _der_encode_utf8_string
+0000000000011c1c T _der_free_encoded_item
+000000000001465c T _dsc_enumerate_chained_fixups
+000000000001393c T _dsc_enumerate_files
+000000000001399c T _dsc_enumerate_images
+0000000000012328 T _dsc_enumerate_mappings
+0000000000012b08 T _dsc_file_read_at_offset
+0000000000012b58 T _dsc_file_read_string_at_offset
+00000000000127c8 T _dsc_fileoff_to_vmaddr
+00000000000124d4 T _dsc_find_buffer
+0000000000013a40 T _dsc_find_image_for_section_address
+0000000000013460 T _dsc_free
+0000000000014a68 T _dsc_get_base_address
+0000000000014808 T _dsc_image_enumerate_chained_fixups
+0000000000013e60 T _dsc_image_enumerate_patches
+0000000000013d64 T _dsc_image_enumerate_symbols
+0000000000013b90 T _dsc_image_get_macho
+0000000000013934 T _dsc_init_from_path
+0000000000012b8c T _dsc_init_from_path_premapped
+0000000000013924 T _dsc_is32bit
+000000000001386c T _dsc_lookup_image_by_address
+0000000000013c6c T _dsc_lookup_image_by_path
+0000000000013b98 T _dsc_lookup_macho_by_address
+0000000000013cd8 T _dsc_lookup_macho_by_path
+00000000000123a8 T _dsc_lookup_mapping
+000000000001464c T _dsc_mapping_enumerate_chained_fixups
+0000000000013f5c T _dsc_mapping_enumerate_chained_fixups_on_range
+00000000000125dc T _dsc_read_from_vmaddr
+0000000000012740 T _dsc_read_string_from_vmaddr
+0000000000012820 T _dsc_vmaddr_to_fileoff
+0000000000015728 T _encode_entitlements_property_list
+000000000001c354 T _enumerate_range
+0000000000016028 T _fat_add_macho
+0000000000015f04 T _fat_create_for_macho_array
+0000000000015e74 T _fat_dsc_init_from_memory_stream
+0000000000015c94 T _fat_enumerate_slices
+0000000000016778 T _fat_find_preferred_slice
+0000000000015d08 T _fat_find_slice
+0000000000015d70 T _fat_free
+0000000000015d50 T _fat_get_single_slice
+0000000000015a38 T _fat_get_stream
+0000000000015de0 T _fat_init_from_memory_stream
+0000000000015ec0 T _fat_init_from_path
+0000000000015a40 T _fat_parse_slices
+0000000000015a30 T _fat_read_at_offset
+0000000000016540 T _file_stream_init_from_file_descriptor
+0000000000016084 T _file_stream_init_from_file_descriptor_nodup
+0000000000016590 T _file_stream_init_from_path
+00000000000282b8 D _gArm64KcallSet
+0000000000028180 D _gBadRecoverySet
+0000000000028000 D _gBaseSet
+0000000000028298 D _gDevModeSet
+0000000000028260 D _gPerfKRWSet
+0000000000028248 D _gPhysRWSet
+00000000000280a0 D _gPhysmapSet
+0000000000028218 D _gSandboxSet
+0000000000028320 D _gSets
+0000000000028110 D _gStructSet
+0000000000028048 D _gTranslationSet
+0000000000028300 D _gTrigonSet
+0000000000028140 D _gTrustcache15Set
+0000000000028160 D _gTrustcache16Set
+0000000000028388 S _gXPF
+0000000000014a70 T _get_property_list_data
+0000000000016620 T _host_get_cpu_information
+00000000000166c0 T _host_supported_arm64e_abi
+000000000000afa4 T _kdecompress
+0000000000018de4 T _load_command_to_string
+0000000000018c38 T _macho_array_create_for_paths
+0000000000017cf4 T _macho_enumerate_dependencies
+0000000000018024 T _macho_enumerate_function_starts
+0000000000016e1c T _macho_enumerate_load_commands
+0000000000017e60 T _macho_enumerate_rpaths
+0000000000017128 T _macho_enumerate_sections
+00000000000170b0 T _macho_enumerate_segments
+0000000000017464 T _macho_enumerate_symbols
+000000000000f7a4 T _macho_extract_cs_to_file
+000000000000f450 T _macho_find_code_signature_bounds
+0000000000018ac4 T _macho_free
+0000000000017c58 T _macho_get_base_address
+0000000000016d18 T _macho_get_containing_cache
+0000000000016cf0 T _macho_get_filetype
+0000000000016cf8 T _macho_get_mach_header
+0000000000016d00 T _macho_get_mach_header_size
+0000000000016ce8 T _macho_get_stream
+0000000000018a30 T _macho_init
+0000000000018b80 T _macho_init_for_writing
+0000000000018d2c T _macho_is_encrypted
+00000000000183dc T _macho_lookup_section_by_addr
+00000000000182b0 T _macho_lookup_segment_by_addr
+0000000000018808 T _macho_parse_fileset_machos
+000000000001853c T _macho_parse_segments
+000000000000f444 T _macho_parse_signature_blob_to_der_encoded_data
+0000000000016944 T _macho_read_at_offset
+0000000000016a2c T _macho_read_at_vmaddr
+000000000000f520 T _macho_read_code_signature
+0000000000016abc T _macho_read_string_at_offset
+0000000000016b34 T _macho_read_string_at_vmaddr
+00000000000171dc T _macho_read_trie_node_at_offset
+0000000000016bb4 T _macho_read_uleb128_at_offset
+000000000000f600 T _macho_replace_code_signature
+00000000000169bc T _macho_translate_fileoff_to_vmaddr
+0000000000016d20 T _macho_translate_vmaddr_to_fileoff
+0000000000016ce0 T _macho_write_at_offset
+0000000000016d9c T _macho_write_at_vmaddr
+000000000001c28c T _memcmp_masked
+000000000001974c T _memory_stream_copy_data
+0000000000019944 T _memory_stream_delete
+0000000000019738 T _memory_stream_expand
+0000000000019c5c T _memory_stream_find_memory
+0000000000019c30 T _memory_stream_free
+0000000000019b44 T _memory_stream_get_flags
+0000000000019b30 T _memory_stream_get_raw_pointer
+0000000000019700 T _memory_stream_get_size
+0000000000019bd4 T _memory_stream_hardclone
+0000000000019614 T _memory_stream_insert
+000000000001959c T _memory_stream_read
+0000000000019a18 T _memory_stream_read_string
+0000000000019b78 T _memory_stream_softclone
+0000000000019a04 T _memory_stream_trim
+00000000000195d8 T _memory_stream_write
+0000000000019ac4 T _memory_stream_write_string
+0000000000015240 T _parse_entitlements_from_property_list
+000000000001b310 T _pfmetric_dynamic_xref_init
+000000000001b35c T _pfmetric_free
+000000000001afe0 T _pfmetric_pattern_init
+000000000001b568 T _pfmetric_run
+000000000001b394 T _pfmetric_run_in_range
+000000000001b0ec T _pfmetric_string_init
+000000000001b2d0 T _pfmetric_xref_init
+000000000001bb94 T _pfsec_arm64_enumerate_xrefs
+000000000001b6b4 T _pfsec_arm64_resolve_adrp_ldr_str_add_reference
+000000000001b7a8 T _pfsec_arm64_resolve_adrp_ldr_str_add_reference_auto
+000000000001ba10 T _pfsec_arm64_resolve_stub
+000000000001b57c T _pfsec_arm64_scan_register_write
+000000000001aea4 T _pfsec_contains_vmaddr
+000000000001abb4 T _pfsec_find_function_start
+000000000001a9ec T _pfsec_find_memory
+000000000001a88c T _pfsec_find_memory_rel
+000000000001ab0c T _pfsec_find_next_inst
+000000000001aa64 T _pfsec_find_prev_inst
+000000000001aecc T _pfsec_free
+000000000001a2b8 T _pfsec_get_dsc
+000000000001a2b0 T _pfsec_get_macho
+000000000001a384 T _pfsec_get_raw_pointer
+0000000000019e84 T _pfsec_info_populate_dsc_mapping
+0000000000019dd0 T _pfsec_info_populate_section
+0000000000019e34 T _pfsec_info_populate_segment
+000000000001a254 T _pfsec_init_from_dsc_mapping
+000000000001a084 T _pfsec_init_from_macho
+000000000001a5b4 T _pfsec_read32
+000000000001a3f0 T _pfsec_read32_reloff
+000000000001a684 T _pfsec_read64
+000000000001a578 T _pfsec_read_at_address
+000000000001a754 T _pfsec_read_pointer
+000000000001a2c8 T _pfsec_read_reloff
+000000000001a560 T _pfsec_read_string
+000000000001a488 T _pfsec_read_string_reloff
+000000000001a79c T _pfsec_set_cached
+000000000001a2c0 T _pfsec_set_pointer_decoder
+0000000000010438 T _print_cdhash
+0000000000014e4c T _print_entitlement_information
+000000000001c300 T _print_hash
+0000000000019f90 T _raw_buffer_find_memory
+000000000001c424 T _read_string
+000000000001231c T _string_comparator
+000000000001c4c8 T _string_has_prefix
+000000000001c53c T _string_has_suffix
+000000000001c27c T _sxt64
+0000000000019230 T _update_lc_code_signature
+00000000000192c4 T _update_load_commands_for_coretrust_bypass
+0000000000019154 T _update_segment_command_64
+000000000000d904 T _xpf_arm64_kcall_supported
+00000000000040ac T _xpf_bad_recovery_init
+0000000000004000 T _xpf_bad_recovery_supported
+0000000000004de8 T _xpf_common_init
+000000000000e760 T _xpf_construct_offset_dictionary
+000000000000e534 T _xpf_find_set
+000000000000e754 T _xpf_get_error
+000000000000e3a4 T _xpf_item_register
+000000000000e410 T _xpf_item_resolve
+000000000000b458 T _xpf_non_ppl_init
+000000000000e630 T _xpf_offset_dictionary_add_set
+000000000000d984 T _xpf_pfsec_init
+000000000000c254 T _xpf_ppl_init
+000000000000e47c T _xpf_print_all_items
+000000000000e294 T _xpf_set_error
+000000000000e5bc T _xpf_set_is_supported
+000000000000da08 T _xpf_start_with_kernel_path
+000000000000e860 T _xpf_stop
+000000000000d8a0 T _xpf_supported_1516
+000000000000d824 T _xpf_supported_15down
+000000000000d7f8 T _xpf_supported_15up
+000000000000d878 T _xpf_supported_16down
+000000000000d84c T _xpf_supported_16up
+000000000000d7f0 T _xpf_supported_always
+000000000000d8f0 T _xpf_supported_arm64
+000000000000d940 T _xpf_trigon_supported
+000000000000d9ec T _xpfsec_decode_pointer
+
+## arm64: undefined symbols
+Command: llvm-nm --arch=arm64 --undefined-only <binary>
+Exit code: 0
+_CC_SHA1
+_CC_SHA256
+_CC_SHA384
+_CFArrayGetCount
+_CFArrayGetTypeID
+_CFArrayGetValueAtIndex
+_CFBooleanGetTypeID
+_CFBooleanGetValue
+_CFDataCreate
+_CFDataGetBytePtr
+_CFDataGetLength
+_CFDictionaryApplyFunction
+_CFDictionaryGetCount
+_CFDictionaryGetTypeID
+_CFGetTypeID
+_CFNumberGetTypeID
+_CFNumberGetValue
+_CFPropertyListCreateData
+_CFPropertyListCreateWithData
+_CFRelease
+_CFShow
+_CFStringGetCString
+_CFStringGetLength
+_CFStringGetMaximumSizeForEncoding
+_CFStringGetTypeID
+__Block_object_assign
+__Block_object_dispose
+__NSConcreteGlobalBlock
+__NSConcreteStackBlock
+___chkstk_darwin
+___error
+___stack_chk_fail
+___stack_chk_guard
+___stderrp
+___strlcpy_chk
+_bzero
+_calloc
+_close
+_compression_decode_buffer
+_dup
+_fclose
+_fopen
+_fprintf
+_fread
+_free
+_fseek
+_fstat
+_ftell
+_ftruncate
+_fwrite
+_kCFAllocatorDefault
+_ldexp
+_lseek
+_malloc
+_memcmp
+_memcpy
+_memset
+_mmap
+_munmap
+_open
+_perror
+_printf
+_putchar
+_puts
+_read
+_realloc
+_snprintf
+_sscanf
+_strcat
+_strcmp
+_strcpy
+_strdup
+_strerror
+_strlen
+_strncat
+_strncmp
+_strncpy
+_strnlen
+_strstr
+_sysctlbyname
+_uname
+_vasprintf
+_vm_page_mask
+_write
+_xpc_dictionary_create_empty
+_xpc_dictionary_set_uint64
+_xpc_release
+
+## arm64e: defined global external symbols
+Command: llvm-nm --arch=arm64e --extern-only --defined-only <binary>
+Exit code: 0
+0000000000013b34 T __dsc_load_file
+000000000001483c T __dsc_load_symbols
+000000000001a018 T __macho_parse
+000000000001b494 T __memory_stream_clone
+000000000001cbdc T __pfsec_run_arm64_xref_metric
+000000000001c99c T __pfsec_run_pattern_metric
+000000000001cacc T __pfsec_run_string_metric
+000000000001cd08 T __pfsec_run_xref_metric
+000000000001de70 T _align_to_size
+000000000001e958 T _arm64_dec_add_imm
+000000000001e4d4 T _arm64_dec_adr_p
+000000000001e35c T _arm64_dec_b_c_cond
+000000000001e240 T _arm64_dec_b_l
+000000000001f3ec T _arm64_dec_cb_n_z
+000000000001ee2c T _arm64_dec_ldr_imm
+000000000001f170 T _arm64_dec_ldr_lit
+000000000001f050 T _arm64_dec_ldrs_imm
+000000000001e6b0 T _arm64_dec_mov_imm
+000000000001e7f0 T _arm64_dec_mov_reg
+000000000001f0cc T _arm64_dec_str_imm
+000000000001eaec T _arm64_dec_sub_imm
+000000000001f528 T _arm64_dec_tb_n_z
+000000000001e860 T _arm64_gen_add_imm
+000000000001e40c T _arm64_gen_adr_p
+000000000001e2c8 T _arm64_gen_b_c_cond
+000000000001e1e0 T _arm64_gen_b_l
+000000000001f358 T _arm64_gen_cb_n_z
+000000000001f200 T _arm64_gen_ldp
+000000000001ebc0 T _arm64_gen_ldr_imm
+000000000001f0ec T _arm64_gen_ldr_lit
+000000000001eff4 T _arm64_gen_ldrs_imm
+000000000001e5c4 T _arm64_gen_mov_imm
+000000000001e740 T _arm64_gen_mov_reg
+000000000001f070 T _arm64_gen_str_imm
+000000000001e9e0 T _arm64_gen_sub_imm
+000000000001f484 T _arm64_gen_tb_n_z
+000000000001e1b0 T _arm64_reg_get_type_string
+000000000001e18c T _arm64_reg_type_get_string
+000000000001e160 T _arm64_reg_type_get_width
+000000000001eb7c T _arm64_str_ldr_type_width
+000000000000f9b0 T _base64_encode
+000000000000fc70 T _buffered_stream_init_from_buffer
+000000000000fb14 T _buffered_stream_init_from_buffer_nocopy
+00000000000116e8 T _code_directory_calculate_page_hash
+0000000000016d54 T _create_der_entitlements_blob
+0000000000015eb0 T _create_property_list_from_file
+0000000000016078 T _create_xml_entitlements_blob
+000000000001015c T _cs_blob_magic_to_string
+0000000000011b18 T _cs_code_directory_get_size
+0000000000011af4 T _cs_hash_type_to_length
+0000000000011acc T _cs_hash_type_to_string
+0000000000011b44 T _cs_slot_to_string
+00000000000102b0 T _cs_slot_type_to_string
+0000000000010968 T _csd_blob_delete
+0000000000010a50 T _csd_blob_free
+0000000000010a38 T _csd_blob_get_size
+0000000000010a40 T _csd_blob_get_type
+000000000001083c T _csd_blob_init
+0000000000010904 T _csd_blob_insert
+0000000000010898 T _csd_blob_read
+00000000000109cc T _csd_blob_read_string
+0000000000010a48 T _csd_blob_set_type
+00000000000108a0 T _csd_blob_write
+00000000000109d4 T _csd_blob_write_string
+00000000000121e0 T _csd_code_directory_calculate_hash
+0000000000012188 T _csd_code_directory_calculate_rank
+0000000000011b6c T _csd_code_directory_copy_identifier
+0000000000011c10 T _csd_code_directory_copy_team_id
+00000000000120b8 T _csd_code_directory_get_flags
+0000000000012124 T _csd_code_directory_get_hash_type
+0000000000012c28 T _csd_code_directory_init
+00000000000122f0 T _csd_code_directory_print_content
+0000000000011654 T _csd_code_directory_read_slot_hash
+00000000000120f0 T _csd_code_directory_set_flags
+0000000000012158 T _csd_code_directory_set_hash_type
+0000000000011eb4 T _csd_code_directory_set_identifier
+0000000000011cb8 T _csd_code_directory_set_team_id
+0000000000012af0 T _csd_code_directory_update_code_slots
+000000000001282c T _csd_code_directory_update_special_slots
+0000000000011884 T _csd_code_directory_verify_code_slot
+0000000000011a1c T _csd_code_directory_verify_code_slots
+0000000000010da4 T _csd_superblob_append_blob
+0000000000011018 T _csd_superblob_calculate_best_cdhash
+0000000000010aa0 T _csd_superblob_decode
+0000000000010b90 T _csd_superblob_encode
+0000000000010fa4 T _csd_superblob_find_best_code_directory
+0000000000010c98 T _csd_superblob_find_blob
+0000000000010ccc T _csd_superblob_find_blob_by_magic
+000000000001147c T _csd_superblob_free
+0000000000010a94 T _csd_superblob_init
+0000000000010d50 T _csd_superblob_insert_blob_after_blob
+0000000000010d64 T _csd_superblob_insert_blob_at_index
+00000000000110cc T _csd_superblob_print_content
+0000000000010f6c T _csd_superblob_remove_blob
+0000000000010ed4 T _csd_superblob_remove_blob_at_index
+0000000000010dc8 T _csd_superblob_replace_blob
+000000000000b914 T _decompress_lzss
+000000000000b728 T _der_decode
+000000000000b7ac T _der_decode_seq
+000000000000b844 T _der_decode_uint64
+0000000000016328 T _der_encode_array
+000000000001308c T _der_encode_boolean
+0000000000016418 T _der_encode_entitlement
+00000000000165b4 T _der_encode_entitlements
+00000000000130dc T _der_encode_integer
+0000000000012fac T _der_encode_item
+0000000000012d88 T _der_encode_length
+000000000001316c T _der_encode_sequence
+00000000000132f4 T _der_encode_set
+0000000000013134 T _der_encode_utf8_string
+0000000000012d4c T _der_free_encoded_item
+0000000000015974 T _dsc_enumerate_chained_fixups
+0000000000014ba0 T _dsc_enumerate_files
+0000000000014c0c T _dsc_enumerate_images
+0000000000013488 T _dsc_enumerate_mappings
+0000000000013d08 T _dsc_file_read_at_offset
+0000000000013d5c T _dsc_file_read_string_at_offset
+00000000000139a4 T _dsc_fileoff_to_vmaddr
+0000000000013664 T _dsc_find_buffer
+0000000000014cbc T _dsc_find_image_for_section_address
+00000000000146a8 T _dsc_free
+0000000000015e38 T _dsc_get_base_address
+0000000000015b78 T _dsc_image_enumerate_chained_fixups
+0000000000015124 T _dsc_image_enumerate_patches
+0000000000015018 T _dsc_image_enumerate_symbols
+0000000000014e28 T _dsc_image_get_macho
+0000000000014b98 T _dsc_init_from_path
+0000000000013da4 T _dsc_init_from_path_premapped
+0000000000014b88 T _dsc_is32bit
+0000000000014acc T _dsc_lookup_image_by_address
+0000000000014f08 T _dsc_lookup_image_by_path
+0000000000014e30 T _dsc_lookup_macho_by_address
+0000000000014f78 T _dsc_lookup_macho_by_path
+000000000001351c T _dsc_lookup_mapping
+0000000000015964 T _dsc_mapping_enumerate_chained_fixups
+0000000000015230 T _dsc_mapping_enumerate_chained_fixups_on_range
+0000000000013790 T _dsc_read_from_vmaddr
+0000000000013918 T _dsc_read_string_from_vmaddr
+00000000000139fc T _dsc_vmaddr_to_fileoff
+0000000000016b44 T _encode_entitlements_property_list
+000000000001dee4 T _enumerate_range
+0000000000017480 T _fat_add_macho
+0000000000017358 T _fat_create_for_macho_array
+00000000000172c0 T _fat_dsc_init_from_memory_stream
+00000000000170bc T _fat_enumerate_slices
+0000000000017c74 T _fat_find_preferred_slice
+000000000001713c T _fat_find_slice
+00000000000171a4 T _fat_free
+0000000000017184 T _fat_get_single_slice
+0000000000016e5c T _fat_get_stream
+0000000000017228 T _fat_init_from_memory_stream
+0000000000017310 T _fat_init_from_path
+0000000000016e64 T _fat_parse_slices
+0000000000016e54 T _fat_read_at_offset
+0000000000017a2c T _file_stream_init_from_file_descriptor
+00000000000174e0 T _file_stream_init_from_file_descriptor_nodup
+0000000000017a80 T _file_stream_init_from_path
+00000000000282b8 D _gArm64KcallSet
+0000000000028180 D _gBadRecoverySet
+0000000000028000 D _gBaseSet
+0000000000028298 D _gDevModeSet
+0000000000028260 D _gPerfKRWSet
+0000000000028248 D _gPhysRWSet
+00000000000280a0 D _gPhysmapSet
+0000000000028218 D _gSandboxSet
+0000000000028320 D _gSets
+0000000000028110 D _gStructSet
+0000000000028048 D _gTranslationSet
+0000000000028300 D _gTrigonSet
+0000000000028140 D _gTrustcache15Set
+0000000000028160 D _gTrustcache16Set
+0000000000028388 S _gXPF
+0000000000015e40 T _get_property_list_data
+0000000000017b14 T _host_get_cpu_information
+0000000000017bb8 T _host_supported_arm64e_abi
+000000000000ba8c T _kdecompress
+000000000001a55c T _load_command_to_string
+000000000001a380 T _macho_array_create_for_paths
+00000000000192b4 T _macho_enumerate_dependencies
+0000000000019634 T _macho_enumerate_function_starts
+0000000000018320 T _macho_enumerate_load_commands
+0000000000019444 T _macho_enumerate_rpaths
+000000000001864c T _macho_enumerate_sections
+00000000000185c8 T _macho_enumerate_segments
+0000000000018998 T _macho_enumerate_symbols
+00000000000107e0 T _macho_extract_cs_to_file
+000000000001043c T _macho_find_code_signature_bounds
+000000000001a1f4 T _macho_free
+00000000000191fc T _macho_get_base_address
+000000000001821c T _macho_get_containing_cache
+00000000000181f4 T _macho_get_filetype
+00000000000181fc T _macho_get_mach_header
+0000000000018204 T _macho_get_mach_header_size
+00000000000181ec T _macho_get_stream
+000000000001a15c T _macho_init
+000000000001a2c4 T _macho_init_for_writing
+000000000001a488 T _macho_is_encrypted
+0000000000019a50 T _macho_lookup_section_by_addr
+0000000000019900 T _macho_lookup_segment_by_addr
+0000000000019ed0 T _macho_parse_fileset_machos
+0000000000019bd4 T _macho_parse_segments
+0000000000010430 T _macho_parse_signature_blob_to_der_encoded_data
+0000000000017e44 T _macho_read_at_offset
+0000000000017f2c T _macho_read_at_vmaddr
+0000000000010528 T _macho_read_code_signature
+0000000000017fbc T _macho_read_string_at_offset
+0000000000018034 T _macho_read_string_at_vmaddr
+000000000001870c T _macho_read_trie_node_at_offset
+00000000000180b4 T _macho_read_uleb128_at_offset
+0000000000010620 T _macho_replace_code_signature
+0000000000017ebc T _macho_translate_fileoff_to_vmaddr
+0000000000018224 T _macho_translate_vmaddr_to_fileoff
+00000000000181e4 T _macho_write_at_offset
+00000000000182a0 T _macho_write_at_vmaddr
+000000000001de14 T _memcmp_masked
+000000000001b080 T _memory_stream_copy_data
+000000000001b27c T _memory_stream_delete
+000000000001b06c T _memory_stream_expand
+000000000001b5c8 T _memory_stream_find_memory
+000000000001b588 T _memory_stream_free
+000000000001b48c T _memory_stream_get_flags
+000000000001b478 T _memory_stream_get_raw_pointer
+000000000001b030 T _memory_stream_get_size
+000000000001b524 T _memory_stream_hardclone
+000000000001af40 T _memory_stream_insert
+000000000001aeb8 T _memory_stream_read
+000000000001b358 T _memory_stream_read_string
+000000000001b4c0 T _memory_stream_softclone
+000000000001b344 T _memory_stream_trim
+000000000001aefc T _memory_stream_write
+000000000001b408 T _memory_stream_write_string
+000000000001662c T _parse_entitlements_from_property_list
+000000000001ce1c T _pfmetric_dynamic_xref_init
+000000000001ce6c T _pfmetric_free
+000000000001ca80 T _pfmetric_pattern_init
+000000000001d0c8 T _pfmetric_run
+000000000001ceb8 T _pfmetric_run_in_range
+000000000001cb98 T _pfmetric_string_init
+000000000001cdd8 T _pfmetric_xref_init
+000000000001d704 T _pfsec_arm64_enumerate_xrefs
+000000000001d218 T _pfsec_arm64_resolve_adrp_ldr_str_add_reference
+000000000001d310 T _pfsec_arm64_resolve_adrp_ldr_str_add_reference_auto
+000000000001d57c T _pfsec_arm64_resolve_stub
+000000000001d0dc T _pfsec_arm64_scan_register_write
+000000000001c920 T _pfsec_contains_vmaddr
+000000000001c614 T _pfsec_find_function_start
+000000000001c440 T _pfsec_find_memory
+000000000001c2b4 T _pfsec_find_memory_rel
+000000000001c568 T _pfsec_find_next_inst
+000000000001c4bc T _pfsec_find_prev_inst
+000000000001c948 T _pfsec_free
+000000000001bc7c T _pfsec_get_dsc
+000000000001bc74 T _pfsec_get_macho
+000000000001bd5c T _pfsec_get_raw_pointer
+000000000001b81c T _pfsec_info_populate_dsc_mapping
+000000000001b760 T _pfsec_info_populate_section
+000000000001b7c8 T _pfsec_info_populate_segment
+000000000001bc14 T _pfsec_init_from_dsc_mapping
+000000000001ba40 T _pfsec_init_from_macho
+000000000001bfb8 T _pfsec_read32
+000000000001bddc T _pfsec_read32_reloff
+000000000001c08c T _pfsec_read64
+000000000001bf7c T _pfsec_read_at_address
+000000000001c160 T _pfsec_read_pointer
+000000000001bc8c T _pfsec_read_reloff
+000000000001bf64 T _pfsec_read_string
+000000000001be78 T _pfsec_read_string_reloff
+000000000001c1bc T _pfsec_set_cached
+000000000001bc84 T _pfsec_set_pointer_decoder
+00000000000114e4 T _print_cdhash
+0000000000016228 T _print_entitlement_information
+000000000001de88 T _print_hash
+000000000001b92c T _raw_buffer_find_memory
+000000000001dfc0 T _read_string
+000000000001347c T _string_comparator
+000000000001e068 T _string_has_prefix
+000000000001e0e4 T _string_has_suffix
+000000000001de04 T _sxt64
+000000000001aa9c T _update_lc_code_signature
+000000000001ab54 T _update_load_commands_for_coretrust_bypass
+000000000001a99c T _update_segment_command_64
+000000000000e778 T _xpf_arm64_kcall_supported
+00000000000040b0 T _xpf_bad_recovery_init
+0000000000004000 T _xpf_bad_recovery_supported
+0000000000004f64 T _xpf_common_init
+000000000000f6a8 T _xpf_construct_offset_dictionary
+000000000000f470 T _xpf_find_set
+000000000000f69c T _xpf_get_error
+000000000000f2d4 T _xpf_item_register
+000000000000f344 T _xpf_item_resolve
+000000000000bf48 T _xpf_non_ppl_init
+000000000000f574 T _xpf_offset_dictionary_add_set
+000000000000e808 T _xpf_pfsec_init
+000000000000cedc T _xpf_ppl_init
+000000000000f3b4 T _xpf_print_all_items
+000000000000f1b8 T _xpf_set_error
+000000000000f4fc T _xpf_set_is_supported
+000000000000e898 T _xpf_start_with_kernel_path
+000000000000f7ac T _xpf_stop
+000000000000e710 T _xpf_supported_1516
+000000000000e688 T _xpf_supported_15down
+000000000000e658 T _xpf_supported_15up
+000000000000e6e4 T _xpf_supported_16down
+000000000000e6b4 T _xpf_supported_16up
+000000000000e650 T _xpf_supported_always
+000000000000e764 T _xpf_supported_arm64
+000000000000e7bc T _xpf_trigon_supported
+000000000000e87c T _xpfsec_decode_pointer
+
+## arm64e: undefined symbols
+Command: llvm-nm --arch=arm64e --undefined-only <binary>
+Exit code: 0
+_CC_SHA1
+_CC_SHA256
+_CC_SHA384
+_CFArrayGetCount
+_CFArrayGetTypeID
+_CFArrayGetValueAtIndex
+_CFBooleanGetTypeID
+_CFBooleanGetValue
+_CFDataCreate
+_CFDataGetBytePtr
+_CFDataGetLength
+_CFDictionaryApplyFunction
+_CFDictionaryGetCount
+_CFDictionaryGetTypeID
+_CFGetTypeID
+_CFNumberGetTypeID
+_CFNumberGetValue
+_CFPropertyListCreateData
+_CFPropertyListCreateWithData
+_CFRelease
+_CFShow
+_CFStringGetCString
+_CFStringGetLength
+_CFStringGetMaximumSizeForEncoding
+_CFStringGetTypeID
+__Block_object_assign
+__Block_object_dispose
+__NSConcreteGlobalBlock
+__NSConcreteStackBlock
+___chkstk_darwin
+___error
+___stack_chk_fail
+___stack_chk_guard
+___stderrp
+___strlcpy_chk
+_bzero
+_calloc
+_close
+_compression_decode_buffer
+_dup
+_fclose
+_fopen
+_fprintf
+_fread
+_free
+_fseek
+_fstat
+_ftell
+_ftruncate
+_fwrite
+_kCFAllocatorDefault
+_ldexp
+_lseek
+_malloc
+_memcmp
+_memcpy
+_memset
+_mmap
+_munmap
+_open
+_perror
+_printf
+_putchar
+_puts
+_read
+_realloc
+_snprintf
+_sscanf
+_strcat
+_strcmp
+_strcpy
+_strdup
+_strerror
+_strlen
+_strncat
+_strncmp
+_strncpy
+_strnlen
+_strstr
+_sysctlbyname
+_uname
+_vasprintf
+_vm_page_mask
+_write
+_xpc_dictionary_create_empty
+_xpc_dictionary_set_uint64
+_xpc_release
+

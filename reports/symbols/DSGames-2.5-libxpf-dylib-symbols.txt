@@ -1,0 +1,212 @@
+# Symbol report: DSGames-2.5 / libxpf.dylib
+
+Static Mach-O symbol inspection only; this does not establish runtime behavior.
+
+Path in extracted IPA: work/dsgames/Payload/DSGames.app/Frameworks/libxpf.dylib
+File size: 507904 bytes
+SHA-256: f2dc42d209e2b52bc837469ce34c637076a23ae4f2823057c78e58e91025db78
+
+## Architectures
+Exit code: 0
+arm64 arm64e
+
+## arm64: defined global external symbols
+Command: llvm-nm --arch=arm64 --extern-only --defined-only <binary>
+Exit code: 0
+0000000000028388 S _gXPF
+000000000000e760 T _xpf_construct_offset_dictionary
+000000000000e410 T _xpf_item_resolve
+000000000000da08 T _xpf_start_with_kernel_path
+000000000000e860 T _xpf_stop
+
+## arm64: undefined symbols
+Command: llvm-nm --arch=arm64 --undefined-only <binary>
+Exit code: 0
+_CC_SHA1
+_CC_SHA256
+_CC_SHA384
+_CFArrayGetCount
+_CFArrayGetTypeID
+_CFArrayGetValueAtIndex
+_CFBooleanGetTypeID
+_CFBooleanGetValue
+_CFDataCreate
+_CFDataGetBytePtr
+_CFDataGetLength
+_CFDictionaryApplyFunction
+_CFDictionaryGetCount
+_CFDictionaryGetTypeID
+_CFGetTypeID
+_CFNumberGetTypeID
+_CFNumberGetValue
+_CFPropertyListCreateData
+_CFPropertyListCreateWithData
+_CFRelease
+_CFShow
+_CFStringGetCString
+_CFStringGetLength
+_CFStringGetMaximumSizeForEncoding
+_CFStringGetTypeID
+__Block_object_assign
+__Block_object_dispose
+__NSConcreteGlobalBlock
+__NSConcreteStackBlock
+___chkstk_darwin
+___error
+___stack_chk_fail
+___stack_chk_guard
+___stderrp
+___strlcpy_chk
+_bzero
+_calloc
+_close
+_compression_decode_buffer
+_dup
+_fclose
+_fopen
+_fprintf
+_fread
+_free
+_fseek
+_fstat
+_ftell
+_ftruncate
+_fwrite
+_kCFAllocatorDefault
+_ldexp
+_lseek
+_malloc
+_memcmp
+_memcpy
+_memset
+_mmap
+_munmap
+_open
+_perror
+_printf
+_putchar
+_puts
+_read
+_realloc
+_snprintf
+_sscanf
+_strcat
+_strcmp
+_strcpy
+_strdup
+_strerror
+_strlen
+_strncat
+_strncmp
+_strncpy
+_strnlen
+_strstr
+_sysctlbyname
+_uname
+_vasprintf
+_vm_page_mask
+_write
+_xpc_dictionary_create_empty
+_xpc_dictionary_set_uint64
+_xpc_release
+
+## arm64e: defined global external symbols
+Command: llvm-nm --arch=arm64e --extern-only --defined-only <binary>
+Exit code: 0
+0000000000028388 S _gXPF
+000000000000f6a8 T _xpf_construct_offset_dictionary
+000000000000f344 T _xpf_item_resolve
+000000000000e898 T _xpf_start_with_kernel_path
+000000000000f7ac T _xpf_stop
+
+## arm64e: undefined symbols
+Command: llvm-nm --arch=arm64e --undefined-only <binary>
+Exit code: 0
+_CC_SHA1
+_CC_SHA256
+_CC_SHA384
+_CFArrayGetCount
+_CFArrayGetTypeID
+_CFArrayGetValueAtIndex
+_CFBooleanGetTypeID
+_CFBooleanGetValue
+_CFDataCreate
+_CFDataGetBytePtr
+_CFDataGetLength
+_CFDictionaryApplyFunction
+_CFDictionaryGetCount
+_CFDictionaryGetTypeID
+_CFGetTypeID
+_CFNumberGetTypeID
+_CFNumberGetValue
+_CFPropertyListCreateData
+_CFPropertyListCreateWithData
+_CFRelease
+_CFShow
+_CFStringGetCString
+_CFStringGetLength
+_CFStringGetMaximumSizeForEncoding
+_CFStringGetTypeID
+__Block_object_assign
+__Block_object_dispose
+__NSConcreteGlobalBlock
+__NSConcreteStackBlock
+___chkstk_darwin
+___error
+___stack_chk_fail
+___stack_chk_guard
+___stderrp
+___strlcpy_chk
+_bzero
+_calloc
+_close
+_compression_decode_buffer
+_dup
+_fclose
+_fopen
+_fprintf
+_fread
+_free
+_fseek
+_fstat
+_ftell
+_ftruncate
+_fwrite
+_kCFAllocatorDefault
+_ldexp
+_lseek
+_malloc
+_memcmp
+_memcpy
+_memset
+_mmap
+_munmap
+_open
+_perror
+_printf
+_putchar
+_puts
+_read
+_realloc
+_snprintf
+_sscanf
+_strcat
+_strcmp
+_strcpy
+_strdup
+_strerror
+_strlen
+_strncat
+_strncmp
+_strncpy
+_strnlen
+_strstr
+_sysctlbyname
+_uname
+_vasprintf
+_vm_page_mask
+_write
+_xpc_dictionary_create_empty
+_xpc_dictionary_set_uint64
+_xpc_release
+
