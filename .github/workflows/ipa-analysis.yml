@@ -9,7 +9,7 @@ on:
       - "lara_v0.2.ipa"
       - "DSGames_2.5.ipa"
       - "scripts/macho_metadata_inventory.py"
-      - "scripts/host_executable_selector_inventory.py"
+      - "scripts/host_executable_selector_inventory.py"\n      - "scripts/ipa_release_gate.py"
 
 permissions:
   contents: write
@@ -132,7 +132,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/macho_metadata_inventory.py
-          python3 scripts/host_executable_selector_inventory.py
+          python3 scripts/host_executable_selector_inventory.py\n          python3 scripts/ipa_release_gate.py
 
       - name: Commit symbol and metadata reports
         shell: bash
@@ -140,7 +140,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/symbols/ reports/metadata/
+          git add reports/symbols/ reports/metadata/ reports/validation/
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
