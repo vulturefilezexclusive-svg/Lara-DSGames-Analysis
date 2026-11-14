@@ -142,7 +142,7 @@ jobs:
           set -euo pipefail
           python3 scripts/macho_metadata_inventory.py
           python3 scripts/host_executable_selector_inventory.py
-          python3 scripts/ipa_release_gate.py\n          python3 scripts/ipa_release_gate.py
+          python3 scripts/ipa_release_gate.py
 
       - name: Commit symbol and metadata reports
         shell: bash
