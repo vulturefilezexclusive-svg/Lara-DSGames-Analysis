@@ -8,6 +8,7 @@ on:
       - ".github/workflows/ipa-analysis.yml"
       - "lara_v0.2.ipa"
       - "DSGames_2.5.ipa"
+      - "scripts/macho_metadata_inventory.py"
 
 permissions:
   contents: write
@@ -125,16 +126,22 @@ jobs:
           (out / "README.md").write_text("\n".join(index) + "\n", encoding="utf-8")
           PY
 
-      - name: Commit symbol reports
+      - name: Generate dependency and Objective-C metadata inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/macho_metadata_inventory.py
+
+      - name: Commit symbol and metadata reports
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/symbols/
+          git add reports/symbols/ reports/metadata/
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
-            git commit -m "Add four targeted dylib symbol reports"
+            git commit -m "Add static Mach-O dependency and metadata reports"
             git push
           fi
