@@ -63,7 +63,7 @@ def parse_slice(name,b):
             for _s in range(nsects):
                 sect=b[sp:sp+16].split(b'\0',1)[0].decode('ascii','replace')
                 seg=b[sp+16:sp+32].split(b'\0',1)[0].decode('ascii','replace')
-                size,offset=struct.unpack_from(e+'QQI',b,sp+32)[0],struct.unpack_from(e+'I',b,sp+48)[0]
+                addr,size,offset=struct.unpack_from(e+'QQI',b,sp+32)
                 if sect=="__objc_methname" and offset+size<=len(b):
                     raw=b[offset:offset+size]
                     for item in raw.split(b'\0'):
@@ -107,7 +107,7 @@ for x in result:
         lines += [f"### {s['architecture']}",""]
         if "error" in s: lines += [s["error"],""]; continue
         lines += [f"- Minimum OS: {s['minimum_os'] or 'unknown'}; SDK: {s['sdk'] or 'unknown'}",
-                  "- Rpaths: "+(", ".join(s["rpaths"]) or "(none declared)",
+                  "- Rpaths: "+(", ".join(s["rpaths"]) or "(none declared)"),
                   "- Linked dylibs:"] 
         lines += [f"  - {d['kind']}: {d['name']}" for d in s["load_commands"]] or ["  - (none found)"]
         lines += [f"- Objective-C method-name strings found: {s['objc_methname_count']}","",
