@@ -9,7 +9,8 @@ on:
       - "lara_v0.2.ipa"
       - "DSGames_2.5.ipa"
       - "scripts/macho_metadata_inventory.py"
-      - "scripts/host_executable_selector_inventory.py"\n      - "scripts/ipa_release_gate.py"
+      - "scripts/host_executable_selector_inventory.py"
+      - "scripts/ipa_release_gate.py"\n      - "scripts/ipa_release_gate.py"
 
 permissions:
   contents: write
@@ -49,8 +50,16 @@ jobs:
           import zipfile
           from pathlib import Path
           for archive, destination in (("lara_v0.2.ipa", "work/lara"), ("DSGames_2.5.ipa", "work/dsgames")):
+              target = Path(destination).resolve()
               with zipfile.ZipFile(archive) as zf:
-                  zf.extractall(destination)
+                  for member in zf.infolist():
+                      name = Path(member.filename)
+                      if name.is_absolute() or ".." in name.parts:
+                          raise SystemExit(f"Unsafe archive path: {member.filename}")
+                      output = (target / name).resolve()
+                      if target not in output.parents and output != target:
+                          raise SystemExit(f"Archive path escapes destination: {member.filename}")
+                  zf.extractall(target)
           PY
 
       - name: Generate four targeted symbol reports
@@ -132,7 +141,8 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/macho_metadata_inventory.py
-          python3 scripts/host_executable_selector_inventory.py\n          python3 scripts/ipa_release_gate.py
+          python3 scripts/host_executable_selector_inventory.py
+          python3 scripts/ipa_release_gate.py\n          python3 scripts/ipa_release_gate.py
 
       - name: Commit symbol and metadata reports
         shell: bash
@@ -140,7 +150,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/symbols/ reports/metadata/ reports/validation/
+          git add reports/symbols/ reports/metadata/ reports/validation/ reports/validation/
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
