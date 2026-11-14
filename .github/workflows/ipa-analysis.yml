@@ -9,6 +9,7 @@ on:
       - "lara_v0.2.ipa"
       - "DSGames_2.5.ipa"
       - "scripts/macho_metadata_inventory.py"
+      - "scripts/host_executable_selector_inventory.py"
 
 permissions:
   contents: write
@@ -131,6 +132,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/macho_metadata_inventory.py
+          python3 scripts/host_executable_selector_inventory.py
 
       - name: Commit symbol and metadata reports
         shell: bash
